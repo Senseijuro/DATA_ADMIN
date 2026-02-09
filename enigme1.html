@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Épreuve 1 - Décodage Système</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+  <audio id="bg-music" loop>
+    <source src="enigme_ost.mp3" type="audio/mpeg">
+  </audio>
+</head>
+<body>
+  <div class="page-loader" id="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <div class="loader-symbols">
+          <span class="loader-symbol circle"></span>
+          <span class="loader-symbol triangle"></span>
+          <span class="loader-symbol square"></span>
+        </div>
+      </div>
+      <div class="loader-text">ÉPREUVE 1 — DÉCODAGE</div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+      <div class="loader-status">Analyse du code source...</div>
+    </div>
+  </div>
+
+  <header class="header">
+    <a href="#" class="back-btn" id="back-btn">← Retour</a>
+    <div class="header-center">
+      <span class="page-badge">ÉPREUVE 1</span>
+    </div>
+    <div class="header-right"></div>
+  </header>
+
+  <main class="game-page">
+    <div class="game-container game-container-wide">
+      <div class="game-header">
+        <div class="game-icon-large">🔓</div>
+        <h1 class="purple">DÉCODAGE SYSTÈME</h1>
+        <p>Déchiffre les 3 codes pour percer le pare-feu de la Matrice</p>
+      </div>
+
+      <div class="game-content">
+        <div class="game-layout-split" id="enigme1-layout" style="display: grid;">
+          <div class="game-col-left">
+            <div class="mission-briefing-box scenario-theme height-match">
+              <div class="briefing-box-header">
+                <span class="briefing-box-icon">🔓</span>
+                <h3>ORDRE DE MISSION</h3>
+                <span class="briefing-box-tag">ÉPREUVE 1</span>
+              </div>
+              
+              <div class="briefing-box-content">
+                <div class="mission-context">
+                  <h4>💻 LA SITUATION</h4>
+                  <p>
+                    Avant de te laisser entrer dans le système, Morpheus veut savoir si tu as les <strong>bases</strong>. 
+                    Il a caché <strong>3 énigmes cryptées</strong> dans le terminal. Trouve les bonnes réponses 
+                    pour prouver que tu mérites d'accéder au niveau suivant.
+                  </p>
+                </div>
+
+                <div class="mission-objective">
+                  <h4>🧩 LES 3 CODES CRYPTÉS</h4>
+                  <div style="background: rgba(0,0,0,0.2); padding: 0.8rem; border-radius: 8px; margin-bottom: 0.8rem;">
+                    <strong>CODE 1</strong><br>
+                    <em>"Je suis un appareil que tout le monde utilise au quotidien.<br>
+                    Je tiens dans ta poche et tu peux m'utiliser pour appeler, envoyer des messages ou aller sur Internet.<br>
+                    Qui suis-je ?"</em><br>
+                  </div>
+                  <div style="background: rgba(0,0,0,0.2); padding: 0.8rem; border-radius: 8px; margin-bottom: 0.8rem;">
+                    <strong>CODE 2</strong><br>
+                    <em>"Je suis un réseau invisible qui te permet de connecter ton téléphone ou ton ordinateur à Internet sans fil.<br>
+                    On me trouve dans les maisons, les cafés et les écoles.<br>
+                    Qui suis-je ?"</em><br>
+                  </div>
+                  <div style="background: rgba(0,0,0,0.2); padding: 0.8rem; border-radius: 8px;">
+                    <strong>CODE 3</strong><br>
+                    <em>"Je suis un mot secret que tu tapes pour protéger tes comptes en ligne.<br>
+                    Sans moi, n'importe qui pourrait accéder à tes données.<br>
+                    Qui suis-je ?"</em><br>
+                  </div>
+                </div>
+
+                <div class="mission-rules">
+                  <h4>📜 RÈGLES DE LA MATRICE</h4>
+                  <ul>
+                    <li><span class="rule-icon">⏱️</span> Trouve les réponses avant la fin du chrono</li>
+                    <li><span class="rule-icon">🤝</span> Bosse avec ton équipe</li>
+                    <li><span class="rule-icon">🚫</span> Quitter la page = Déconnexion forcée</li>
+                    <li><span class="rule-icon">💡</span> Un indice dispo auprès du maître du jeu</li>
+                  </ul>
+                </div>
+
+                <div class="mission-reward">
+                  <h4>🏆 PROGRAMME À DÉBLOQUER</h4>
+                  <div class="reward-preview">
+                    <span class="reward-icon-box">🔓</span>
+                    <div class="reward-details">
+                      <strong>Programme mystère</strong>
+                      <span>À découvrir dans le coffre-fort digital</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-col-right">
+            <div class="game-content-inner height-match">
+              <div class="timer-section-centered">
+                <div class="warning-box" id="warning-box">
+                  <span class="warning-icon">⚠️</span>
+                  <p>Une fois le chrono lancé, si tu quittes la page, c'est déconnexion forcée !</p>
+                </div>
+
+                <div class="timer-container">
+                  <div class="timer-display">
+                    <span class="timer-num" id="timer-min">05</span>
+                    <span class="timer-sep">:</span>
+                    <span class="timer-num" id="timer-sec">00</span>
+                  </div>
+                  <span class="timer-label">TEMPS RESTANT</span>
+                </div>
+
+                <button class="btn-primary" id="btn-start">LANCER LE CHRONO</button>
+
+                <div class="validation-container hidden" id="validation">
+                  <div class="validation-box">
+                    <h3>⏱️ Temps écoulé !</h3>
+                    <p>T'as trouvé les 3 réponses ?</p>
+                    <div class="validation-btns">
+                      <button class="btn-success" id="btn-yes">OUI, CODES DÉCHIFFRÉS</button>
+                      <button class="btn-fail" id="btn-no">NON, J'AI PAS TROUVÉ</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-container-full hidden" id="result">
+          <div class="result-box" id="result-box">
+            <div class="result-icon" id="result-icon"></div>
+            <h3 id="result-title"></h3>
+            <p id="result-text"></p>
+            <a href="quiz.html" class="btn-primary">CONTINUER →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="loader.js"></script>
+  <script src="gameState.js"></script>
+  <script src="enigme1.js"></script>
+  <script src="music.js"></script>
+</body>
+</html>
