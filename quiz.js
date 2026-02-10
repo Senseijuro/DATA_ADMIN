@@ -4,34 +4,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var questions = [
     { 
-      question: "C'est quoi le langage le plus utilisé pour créer des sites web ?", 
+      question: "Tu reçois un e-mail de ta banque qui te demande de cliquer sur un lien pour 'vérifier ton compte'. L'adresse de l'expéditeur est bizarre. C'est probablement...", 
       options: [
-        "Python", 
-        "HTML", 
-        "Java",
-        "C++"
+        "Une mise à jour normale", 
+        "Une tentative de phishing (hameçonnage)", 
+        "Un message de ton conseiller bancaire",
+        "Une publicité officielle"
       ], 
       correct: 1 
     },
     { 
-      question: "Comment s'appelle le programme qui protège ton ordinateur contre les virus ?", 
+      question: "Quand tu vois un petit cadenas 🔒 à côté de l'adresse d'un site web dans ton navigateur, ça veut dire quoi ?", 
       options: [
-        "Un navigateur", 
-        "Un système d'exploitation", 
-        "Un antivirus", 
-        "Un moteur de recherche"
+        "Le site est payant", 
+        "Le site est bloqué dans ton pays", 
+        "La connexion est sécurisée (HTTPS)", 
+        "Le site est réservé aux adultes"
       ], 
       correct: 2 
     },
     { 
-      question: "C'est quoi le 'Cloud' en informatique ?", 
+      question: "C'est quoi une adresse IP ?", 
       options: [
-        "Un type de virus informatique", 
-        "Un câble réseau spécial", 
-        "Un logiciel de dessin",
-        "Un espace de stockage en ligne accessible via Internet"
+        "Le nom de ton fournisseur Internet", 
+        "Un numéro unique qui identifie chaque appareil connecté à Internet", 
+        "Le mot de passe de ton Wi-Fi",
+        "Le nom de ton navigateur web"
       ], 
-      correct: 3 
+      correct: 1 
     }
   ];
 
